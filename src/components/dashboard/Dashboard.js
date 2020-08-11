@@ -1,7 +1,8 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
-const products = (props) => {
+const Products = (props) => {
+    console.log(props)
     const {id, name, price, image_url} = props.data;
     
     return(
@@ -13,4 +14,4 @@ const products = (props) => {
     );
 };
 
-export default withRouter(products);
+export default withRouter(Products);

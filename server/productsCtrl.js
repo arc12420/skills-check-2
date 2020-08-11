@@ -2,9 +2,9 @@ const { findAllByAltText } = require("@testing-library/react")
 
 module.exports = {
     getProducts: (req, res) => {
-        const dbInstance = req.app.get('db')
+        const db = req.app.get('db')
 
-        dbInstance.get_all_product()
+        db.get_all_product()
          .then(products => res.status(200).send(products))
          .catch(err => {
              res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
