@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import DashboardNew from './components/dashboardNew/dashboardNew';
-// import Form from './components/form/Form';
+import FormNew from './components/formNew/formNew';
 
 
 
@@ -9,7 +9,6 @@ import DashboardNew from './components/dashboardNew/dashboardNew';
 export default (
     <Switch>
         <Route exact path = '/' component = {DashboardNew}/>
-        {/* <Route path = '/product' component = {Product}/> */}
-        {/* <Route path = '/Form' component = {Form}/> */}
+        <Route path = '/Form' component = {FormNew}/>
     </Switch>
 )

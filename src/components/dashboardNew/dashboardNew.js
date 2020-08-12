@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ProductNew from '../productNew/productNew';
 
 class DashboardNew extends Component{
     constructor(){
@@ -21,11 +22,21 @@ class DashboardNew extends Component{
           })
       }
 
+      dlt = (id) => {
+          axios.delete(`/api/products/${id}`)
+          .then( res => {
+              this.getProducts()
+          })
+      }
+
 
     render(){
         const arr = this.state.products.map( (element, index) => {
             return (
-                <div>{element.name}</div>
+                <div>
+                    <ProductNew product = {element} dlt = {this.dlt}/>
+                    
+                    </div>
             )
         })
         return(
