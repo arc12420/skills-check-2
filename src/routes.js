@@ -9,6 +9,7 @@ import FormNew from './components/formNew/formNew';
 export default (
     <Switch>
         <Route exact path = '/' component = {DashboardNew}/>
-        <Route path = '/Form' component = {FormNew}/>
+        <Route exact path = '/Form' component = {FormNew}/>
+        <Route path = '/Form/:id' component = {FormNew}/>
     </Switch>
 )

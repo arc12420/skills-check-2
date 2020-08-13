@@ -27,7 +27,7 @@ module.exports = {
         const { id } = req.params;
 
         dbInstance.get_product(id)
-        .then(product => res.status(200).send(product))
+        .then(product => res.status(200).send(product[0]))
         .catch(err => {
             res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });
             console.log(err)
@@ -37,7 +37,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const { params, body } = req;
 
-        dbInstance.update_product([params.id, body.price])
+        dbInstance.update_product([params.id, body.price, body.name, body.image_url])
         .then(() => res.sendStatus(200))
         .catch(err => {
             res.status(500).send({ errorMessage: "Oops! Something went wrong. Our engineers have been informed!" });

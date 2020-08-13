@@ -1,1 +1,1 @@
-UPDATE products SET price = $2 WHERE id = $1;
+UPDATE products SET (price, name, image_url) = ($2, $3, $4) WHERE id = $1;
